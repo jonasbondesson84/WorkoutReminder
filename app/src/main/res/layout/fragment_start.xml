@@ -32,8 +32,9 @@
             android:layout_marginTop="24dp"
             />
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTodaysActivities"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp"
             app:layout_constraintLeft_toLeftOf="parent"
