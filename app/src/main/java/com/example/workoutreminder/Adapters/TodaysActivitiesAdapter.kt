@@ -13,7 +13,7 @@ class TodaysActivitiesAdapter(val context: Context, private val todaysActivities
 
     val layoutInflater = LayoutInflater.from(context)
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
+        val tvTitle = itemView.findViewById<TextView>(R.id.tvCardTitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
