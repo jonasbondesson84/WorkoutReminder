@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workoutreminder.Adapters.TodaysActivitiesAdapter
 import com.example.workoutreminder.Models.Activity
@@ -45,7 +45,7 @@ class StartFragment : Fragment() {
         list.add(Activity("springa"))
         list.add(Activity("löpa"))
         recyclerView = view.findViewById(R.id.rvTodaysActivities)
-        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.layoutManager =  GridLayoutManager(view.context, 2)//LinearLayoutManager(view.context)
         recyclerView.adapter = TodaysActivitiesAdapter(view.context, list)
 
 
