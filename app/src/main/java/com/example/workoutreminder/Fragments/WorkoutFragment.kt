@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.workoutreminder.Adapters.ActivityListAdapter
 import com.example.workoutreminder.Models.Activity
 import com.example.workoutreminder.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +29,7 @@ class WorkoutFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var recyclerView: RecyclerView
+    private lateinit var fabAdd: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,11 +49,19 @@ class WorkoutFragment : Fragment() {
         val list = mutableListOf<Activity>()
         list.add(Activity("springa"))
         list.add(Activity("löpa"))
+        fabAdd = view.findViewById(R.id.fabAddActivity)
         recyclerView = view.findViewById(R.id.rvActivityList)
         recyclerView.layoutManager =  LinearLayoutManager(view.context)
         recyclerView.adapter = ActivityListAdapter(view.context, list)
         recyclerView.addItemDecoration(DividerItemDecoration(view.context, DividerItemDecoration.VERTICAL))
 
+
+        fabAdd.setOnClickListener {
+            val dialog =BottomSheetDialog(view.context)
+            val sheetView = layoutInflater.inflate(R.layout.add_activity_dialog, null)
+            dialog.setContentView(sheetView)
+            dialog.show()
+        }
         return view
     }
 
